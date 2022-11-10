@@ -22,6 +22,19 @@ contexts:
         - match: (?=^[_].A[_].r[_].g.*)
           pop: true
         - include: scope:source.r
+    - match: ^([_].A[_].r[_].g[_].u[_].m[_].e[_].n[_].t[_].s)(:)
+      captures:
+        1: markup.bold.help
+        2: keyword.operator.rhelp
+      push:
+        - match: ^(?=^[_].\S[_].\S[_].\S.*)
+          pop: true
+        - match: ^\s*(\b((,[\s])?\w[\w.]*)*\b|[.][.][.])(:)
+          captures:
+            1: storage.type.rhelp
+            2: storage.type.rhelp
+            3: storage.type.rhelp
+            4: keyword.operator.rhelp
     - match: ^([_].E[_].x[_].a[_].m[_].p[_].l[_].e[_].s)(:)
       captures:
         1: markup.italic.rhelp
