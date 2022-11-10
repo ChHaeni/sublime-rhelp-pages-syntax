@@ -17,6 +17,11 @@ contexts:
       captures:
         1: markup.italic.rhelp
         2: keyword.operator.rhelp
+      push:
+        - meta_content_scope: source.r
+        - match: '(?=^[_].A[_].r[_].g.*)'
+          pop: true
+        - include: scope:source.r
     - match: ^([_].*)(:)
       captures:
         1: markup.bold.rhelp
