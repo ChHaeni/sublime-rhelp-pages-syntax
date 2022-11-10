@@ -1,0 +1,15 @@
+%YAML 1.2
+---
+# http://www.sublimetext.com/docs/3/syntax.html
+name: RhelpPages
+file_extensions:
+  - rhelp
+first_line_match: '.*R Documentation$'
+scope: source.rhelp
+contexts:
+  main:
+    - match: ^\s*\b(.*)\b\s+\b(.*)\b\s+(R Documentation)$
+      captures:
+        1: keyword.other.rhelp
+        2: keyword.other.rhelp
+        3: keyword.other.rhelp
