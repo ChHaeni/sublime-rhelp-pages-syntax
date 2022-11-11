@@ -36,12 +36,10 @@ contexts:
       push:
         - match: ^(?=^[_].\S[_].\S[_].\S.*)
           pop: true
-        - match: ^\s*(\b((,[\s])?\w[\w.]*)*\b|[.][.][.])(:)
+        - match: ^\s*(\b(?:(?:,[\s])?\w[\w.]*)*\b|[.][.][.])(:)
           captures:
             1: storage.type.rhelp
-            2: storage.type.rhelp
-            3: storage.type.rhelp
-            4: keyword.operator.rhelp
+            2: keyword.operator.rhelp
         - include: ticks
     - match: ^([_].V[_].a[_].l[_].u[_].e)(:)
       captures:
