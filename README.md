@@ -4,7 +4,7 @@ Syntax highlighting of R help pages that can be used with bat as a pager from wi
 ![screenshot of ?lm](./lm-help.png)
 
 ## Install bat
-Install `[bat](https://github.com/sharkdp/bat)` following the [instructions](https://github.com/sharkdp/bat#installation) in `bat`'s README.
+Install [`bat`](https://github.com/sharkdp/bat) following the [instructions](https://github.com/sharkdp/bat#installation) in `bat`'s README.
 
 E.g. via `cargo`:
 
