@@ -1,8 +1,8 @@
 %YAML 1.2
 ---
-# http://www.sublimetext.com/docs/3/syntax.html
-# TODO:
-#   - basetext: any text with fancyticks highlighted (& *.* as italic? **.** bold?)
+# https://www.sublimetext.com/docs/syntax.html
+# https://raw.githubusercontent.com/kkos/oniguruma/v6.9.1/doc/RE
+# https://www.sublimetext.com/docs/scope_naming.html#alphabetical-reference
 name: RhelpPages
 file_extensions:
   - rhelp
