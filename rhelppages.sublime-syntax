@@ -9,6 +9,7 @@ file_extensions:
 first_line_match: '.*R Documentation$'
 scope: source.rhelp
 contexts:
+
   main:
     - match: ^\s*\b(.*)\b\s+\b(.*)\b\s+(R Documentation)$
       captures:
@@ -37,6 +38,7 @@ contexts:
             2: storage.type.rhelp
             3: storage.type.rhelp
             4: keyword.operator.rhelp
+        - include: ticks
     - match: ^([_].V[_].a[_].l[_].u[_].e)(:)
       captures:
         1: markup.bold.help
@@ -50,6 +52,7 @@ contexts:
             2: storage.type.rhelp
             3: storage.type.rhelp
             4: keyword.operator.rhelp
+        - include: ticks
     - match: ^([_].E[_].x[_].a[_].m[_].p[_].l[_].e[_].s)(:)
       captures:
         1: markup.italic.rhelp
@@ -61,3 +64,11 @@ contexts:
       captures:
         1: markup.bold.rhelp
         2: keyword.operator.rhelp
+    - include: ticks
+
+  ticks:
+    - match: '\u2018'
+      push:
+        - meta_content_scope: string.quoted.double.rhelp
+        - match: '\u2019'
+          pop: true
