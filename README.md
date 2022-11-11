@@ -46,3 +46,14 @@ options(
     pager = "'bat --pager 'less -RF' -l 'RhelpPages' --theme gruvbox-dark --style plain'"
 )
 ```
+
+## Check themes
+The syntax was built to provide nice coloring using the `gruvbox-dark` theme.
+
+You can check different color themes by running the following line which uses [fzf](https://github.com/junegunn/fzf):
+
+```bash
+bat --list-themes | fzf --preview="bat --theme={} --color=always <(Rscript -e '?lm')"
+```
+
+You can always adapt the coloring to your favorit color theme by changing the [scope names](https://www.sublimetext.com/docs/scope_naming.html#alphabetical-reference) accordingly.
