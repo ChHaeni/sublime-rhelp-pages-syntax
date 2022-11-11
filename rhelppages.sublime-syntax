@@ -11,14 +11,18 @@ scope: source.rhelp
 contexts:
 
   main:
-    - match: ^\s*\b(.*)\b\s+\b(.*)\b\s+(R Documentation)$
+    - match: ^\s*\b(.*)\b\s+\b(?:package[:])?(.*)\b\s+(R Documentation)$
       captures:
         1: markup.bold.rhelp
-        2: markup.quote.rhelp
+        2: markup.bold.rhelp
         3: markup.bold.rhelp
+      push:
+        - meta_content_scope: entity.name.tag.rhelp
+        - match: (?=^[_].D[_].e[_].s.*)
+          pop: true
     - match: ^([_].U[_].s[_].a[_].g[_].e)(:)
       captures:
-        1: markup.italic.rhelp
+        1: markup.bold.rhelp
         2: keyword.operator.rhelp
       push:
         - meta_content_scope: source.r
@@ -69,6 +73,6 @@ contexts:
   ticks:
     - match: '\u2018'
       push:
-        - meta_content_scope: string.quoted.double.rhelp
+        - meta_content_scope: entity.name.tag.rhelp
         - match: '\u2019'
           pop: true
