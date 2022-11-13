@@ -62,6 +62,8 @@ contexts:
               1: storage.type.rhelp
               2: keyword.operator.rhelp
             pop: true
+          - match: ^\s*\S
+            pop: true
         - include: ticks
     - match: ^([_].E[_].x[_].a[_].m[_].p[_].l[_].e[_].s)(:)
       captures:
