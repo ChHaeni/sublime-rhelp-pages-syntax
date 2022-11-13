@@ -412,11 +412,11 @@
         <key>name</key>
         <string>Strings</string>
         <key>scope</key>
-        <string>meta.object-literal.key string, string</string>
+        <string>meta.object-literal.key string, string, punctuation.definition.string</string>
         <key>settings</key>
         <dict>
           <key>foreground</key>
-          <string>#b8bb26</string>
+          <string>#8ec07c</string>
         </dict>
       </dict>
       <dict>
@@ -438,7 +438,7 @@
         <key>settings</key>
         <dict>
           <key>foreground</key>
-          <string>#b8bb26</string>
+          <string>#8ec07c</string>
         </dict>
       </dict>
       <dict>
@@ -721,7 +721,7 @@
         <key>settings</key>
         <dict>
           <key>foreground</key>
-          <string>#8ec07c</string>
+          <string>#b8bb26</string>
         </dict>
       </dict>
       <dict>
