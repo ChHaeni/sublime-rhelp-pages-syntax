@@ -59,3 +59,37 @@ bat --list-themes | fzf --preview="bat --theme={} --color=always <(Rscript -e '?
 ```
 
 You can always adapt the coloring to your favorit color theme by changing the [scope names](https://www.sublimetext.com/docs/scope_naming.html#alphabetical-reference) accordingly.
+
+## Change to gruvbox-rhelp color theme
+The gruvbox-rhelp theme is intended to improve the coloring of the R syntax used with bat (the gruvbox-dark theme for R syntax looks cruel, in my opinion).
+
+To install the gruvbox-rhelp color theme, you have to create a local themes folder and create a softlink to the theme file in this folder:
+
+```bash
+mkdir -p "$(bat --config-dir)/themes"
+cd "$(bat --config-dir)/themes"
+
+# create softlink pointing to file in repository
+ln -s ../syntaxes/sublime-rhelp-pages-syntax/gruvbox-rhelp.tmTheme gruvbox-rhelp.tmTheme
+```
+
+Build the new theme:
+
+```bash
+bat cache --build
+```
+
+Possibly, check if the new theme was built correctly:
+
+```bash
+# should show the new gruvbox-rhelp theme
+bat --list-themes
+```
+
+And change your `.Rprofile` file to use the new color theme:
+
+```r
+options(
+    pager = "'bat --pager 'less -RF' -l 'RhelpPages' --theme gruvbox-rhelp --style plain'"
+)
+```
